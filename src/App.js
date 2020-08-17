@@ -8,13 +8,14 @@ import Health from "./components/Health/Health";
 import Sports from "./components/Sports/Sports";
 import Entertainment from "./components/Entertainment/Entertainment";
 import Default404 from "./components/Default404/Default404";
-
+import Geolocation from "./components/Geolocation/Geolocation";
 function App() {
   return (
 
     <BrowserRouter>
     <div className="App">
     <Navbar />
+    <Geolocation />
       <Switch>
          <Route exact path='/home' component ={Home} />
           <Route exact path='/sports' component ={Sports} />
