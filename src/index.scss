@@ -7,3 +7,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
+/*REFERENCE -BASE COLORS -Orange */
+$primary-dark: #ec7907;
+$primary-light: #ff9800;
+$brown-links: #9d2424;
+/*reference only*/
+$dark:#b26a00;
+$medium:#ff9800;
+$light:#ffac33;
+
+.MuiAppBar-colorPrimary {
+    color: #fff;
+    background-color:  #ec7907 !important;
+}

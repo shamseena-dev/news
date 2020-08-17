@@ -26,7 +26,7 @@ function NewsCard({newsData}) {
   return (
     
         <div className="news-card">
-        <Card className={classes.root}>
+        <Card className={classes.root} raised>
       <CardActionArea>
         {newsCardData.image ? 
         <CardMedia
@@ -37,22 +37,29 @@ function NewsCard({newsData}) {
           title={newsCardData.title}
         /> : null }
 
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h6" color="textSecondary">
+         <a href={newsCardData.url}><CardContent >
+          <Typography gutterBottom variant="h6" component="h6" color="textSecondary">
            {newsCardData.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {newsCardData.description}
           </Typography>
-        </CardContent>
+        </CardContent> </a>
       </CardActionArea>
       <CardActions>
+       
         <Button size="small" color="primary">
-          Share
+         <a href={newsCardData.url}> Read More </a>
         </Button>
-        <Button size="small" color="primary">
-         <a href={newsCardData.url}> Learn More </a>
+
+         <Button size="small" color="textSecondary">
+          Source:  <a href={newsCardData.source.url}>{newsData.source.name} </a>
         </Button>
+        
+         <Button size="small" color="textSecondary">
+         {newsData.publishedAt} 
+        </Button>
+     
       </CardActions>
     </Card>
   </div>

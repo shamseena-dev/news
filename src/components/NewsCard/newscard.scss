@@ -1,4 +1,16 @@
 .news-card .MuiPaper-root  {
 	box-shadow: 4px 4px 10px rgba(0,0,0,0.2) !important;
-	margin:10px 20px;
+	margin:15px 20px;
+	min-height: 250px;
+    background-color: #f0f0f0;
+
 }
+
+.news-card a{
+	text-decoration: none;
+}
+.news-card .MuiCardContent-root{
+   background-color: #fff;
+	height:50%;
+}
+

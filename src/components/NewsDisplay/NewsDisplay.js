@@ -10,7 +10,7 @@ function NewsDisplay({data}) {
   return (
     <div className="container">
      
-        <h4>News </h4>
+       
 
 
 {data ? (<div className="news-container">

@@ -23,14 +23,14 @@ function Navbar(){
   return(
 <>
 
-<AppBar position="static">
+<AppBar position="static" className="nav">
 <h2> LOCAL NEWS </h2>
   
    <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" centered>
-         <NavLink to="/home" className="MuiButtonBase-root  MuiTab-textColorInherit">   <Tab label="Home" /> </NavLink>
-          <NavLink to="/sports" className="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit">   <Tab label="Sports" /> </NavLink>
-          <NavLink to="/health" className="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit">   <Tab label="Health" /> </NavLink>
-          <NavLink to="/weather" className="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit">   <Tab label="Weather" /> </NavLink>
+         <NavLink to="/home" activeClassName="active" className=" MuiButtonBase-root  MuiTab-textColorInherit">   <Tab label="Home" /> </NavLink>
+          <NavLink to="/sports" activeClassName="active" className="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit">   <Tab label="Sports" /> </NavLink>
+          <NavLink to="/health" activeClassName="active" className="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit">   <Tab label="Health" /> </NavLink>
+          <NavLink to="/weather" activeClassName="active" className="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit">   <Tab label="Weather" /> </NavLink>
          
         </Tabs>
 

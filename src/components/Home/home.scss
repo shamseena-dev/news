@@ -1,0 +1,28 @@
+.banner-div{
+	background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.6)),url("../../assets/urban-min.jpg");
+	background-position: center;
+	
+	
+	width:100%;
+	height:400px;
+	z-index:-1;
+	padding-top:40px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	h1{
+		color:#f0f0f0;
+		z-index:100;
+	}
+	
+    .MuiButtonBase-root{
+    	background-color: #ff9800 !important;
+    	color:white;
+    	font-weight: 800;
+    	box-shadow: shadow-heavy;
+    }
+}
+
+
