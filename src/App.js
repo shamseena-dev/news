@@ -7,6 +7,7 @@ import Weather from "./components/Weather/Weather";
 import Health from "./components/Health/Health";
 import Sports from "./components/Sports/Sports";
 import Entertainment from "./components/Entertainment/Entertainment";
+import Default404 from "./components/Default404/Default404";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
            <Route exact path='/health' component ={Health} />
             <Route exact path='/weather' component ={Weather} />
             <Route exact path='/entertainment' component ={Entertainment} />
-            <Route path='/' component ={Error} />
+            <Route path='/' component ={Default404} />
 
          </Switch>
          
