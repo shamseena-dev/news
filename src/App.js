@@ -23,6 +23,7 @@ function App() {
     <Navbar />
     <Geolocation />
       <Switch>
+       <Route exact path='/' component ={Home} />
          <Route exact path='/home' component ={Home} />
           <Route exact path='/sports' component ={Sports} />
            <Route exact path='/health' component ={Health} />

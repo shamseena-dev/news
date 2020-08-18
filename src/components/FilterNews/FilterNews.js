@@ -75,8 +75,8 @@ function FilterNews() {
 }
 }
     ]);
-    const [language,setLanguage] = useContext(LanguageContext);
-    const [searchData,setSearchData] = useContext(SearchContext);
+    const [language] = useContext(LanguageContext);
+    const [searchData] = useContext(SearchContext);
   useEffect(()=>{
   	const API_KEY = process.env.REACT_APP_GNEWS_API_KEY;
 
@@ -109,7 +109,7 @@ function FilterNews() {
 catch(error) {
             console.error(error);
         }
-},[]);
+},[searchData,language];
 
 
 

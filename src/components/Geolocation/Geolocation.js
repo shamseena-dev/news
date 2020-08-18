@@ -1,12 +1,12 @@
-import React,{useState, useEffect,useContext}from 'react';
+import React,{useEffect,useContext}from 'react';
 import "./geolocation.scss";
-import axios from "axios";
+
 import {GeolocationContext} from '../../contexts/GeolocationContext';
 import {LanguageContext} from '../../contexts/LanguageContext';
 
 function Geolocation() {
     const [geolocation,setGeolocation] = useContext(GeolocationContext);
-     const [language,setLanguage] = useContext(LanguageContext);
+     const [setLanguage] = useContext(LanguageContext);
 	useEffect(()=>{
 		navigator.geolocation.getCurrentPosition(function(position) {
      
@@ -16,12 +16,13 @@ function Geolocation() {
        setGeolocation({lat, 
                      lon});
        const lang =navigator.language;
-       setLanguage(lang);
+       const extracted= lang.slice(0, 2);
+       setLanguage(extracted);
       
 
      
     });
-	},[]);
+	},[geolocation]);
 
 
   

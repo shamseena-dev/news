@@ -35,13 +35,13 @@ const lon= geolocation.lon;
 catch(error) {
             console.error(error);
         }
-},[geolocation]);
+},[lat,lon]);
 
   return (
     <div className="container">
      
        
-        {data.length != 0 ?
+        {data.length !== 0 ?
         <WeatherCard  data={data} />
            
            : null }

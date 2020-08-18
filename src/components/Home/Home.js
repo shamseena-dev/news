@@ -9,7 +9,7 @@ import TextField from '@material-ui/core/TextField';
 import FilterNews from "../FilterNews/FilterNews";
  import {SearchContext} from '../../contexts/SearchContext/SearchContext';
  import {LanguageContext} from '../../contexts/LanguageContext';
-import Geolocation from "../Geolocation/Geolocation";
+
 
 const Weather = React.lazy(() => import("../Weather/Weather"));
 
@@ -35,9 +35,9 @@ function Home() {
   const [data , setData] = useState([]);
 
 
-  const [searchData,setSearchData] = useContext(SearchContext);
+  const [searchData] = useContext(SearchContext);
   const [filteredNews,setFilteredNews] = useState(false);
-  const [language,setLanguage] = useContext(LanguageContext);
+  const [language] = useContext(LanguageContext);
 
   useEffect(()=>{
   	const API_KEY = process.env.REACT_APP_GNEWS_API_KEY;
@@ -51,7 +51,7 @@ function Home() {
 
 
            if(res.data){
-                    console.log("res",res);
+                    
                     setData(res.data.articles)
 
                 }   
