@@ -25,10 +25,9 @@ function App() {
       <Switch>
        <Route exact path='/' component ={Home} />
          <Route exact path='/home' component ={Home} />
-          <Route exact path='/sports' component ={Sports} />
-           <Route exact path='/health' component ={Health} />
+          
             <Route exact path='/weather' component ={Weather} />
-            <Route exact path='/entertainment' component ={Entertainment} />
+            
             <Route path='/' component ={Default404} />
 
          </Switch>
