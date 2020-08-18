@@ -1,4 +1,4 @@
-## Design Decision Documentation:
+# Design Decision Documentation:
 
 Font Family : Roboto 
 
@@ -6,7 +6,7 @@ CSS Framework : Material UI (based on Material Design)
 
 Primary Color :  #ec7907  (MUI Theme's primary color is changed)
 
-# Color shades defined:
+## Color shades defined:
 
 primary-dark: #ec7907;
 
@@ -22,7 +22,7 @@ section title color: rgba(0, 0, 0, 0.54);
 
 Main banner caption color: #fff
 
-# Other design details:
+## Other design details:
 
 White spacing provided 
 
