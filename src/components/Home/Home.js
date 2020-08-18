@@ -35,7 +35,7 @@ function Home() {
   const [data , setData] = useState([]);
 
 
-  const [searchData] = useContext(SearchContext);
+  const [setSearchData] = useContext(SearchContext);
   const [filteredNews,setFilteredNews] = useState(false);
   const [language] = useContext(LanguageContext);
 

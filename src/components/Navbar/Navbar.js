@@ -9,10 +9,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 
 import "./navbar.scss";
 
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+
 
 
 import {LanguageContext} from '../../contexts/LanguageContext';
@@ -86,19 +83,12 @@ function Navbar(){
 const [language,setLanguage] = useContext(LanguageContext);
   const classes = useStyles();
 
-  const [open, setOpen] = React.useState(false);
-
+ 
   const handleChange = (event) => {
     setLanguage(event.target.value);
   };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
+  
   return (
     <div className="nav-bar">
     <div className={classes.root}>
@@ -116,47 +106,26 @@ const [language,setLanguage] = useContext(LanguageContext);
           <Typography className={classes.title} variant="h4" noWrap>
            D'Local News
           </Typography>
-          
+         
 
-
+         <select name="cars" id="cars" value={language}
+          onChange={handleChange}>
+    <option value="en">English</option>
+    <option value="de">German</option>
+    <option value="cs">Czech</option>
+    <option value="fr">French</option>
+     <option value="da">Danish</option>
+    <option value="nl">Dutch</option>
+   
+  </select> 
 
 
 
  
-    <div>
-      
-      <FormControl className={classes.formControl}>
-        <InputLabel id="demo-controlled-open-select-label">Lang</InputLabel>
-        <Select
-          labelId="demo-controlled-open-select-label"
-          id="demo-controlled-open-select"
-          open={open}
-          onClose={handleClose}
-          onOpen={handleOpen}
-          value={language}
-          onChange={handleChange}
-         
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
 
 
-          <MenuItem value="en">English</MenuItem>
-          <MenuItem value="de">German</MenuItem>
-          <MenuItem value="cs">Czech</MenuItem>
-           <MenuItem value="fr">French</MenuItem>
-             <MenuItem value="da">Danish</MenuItem>  
-             <MenuItem value="nl">Dutch</MenuItem>            
-          
-          
-          
-
-        </Select>
-      </FormControl>
-   </div>
-   
-
+ 
+    
         </Toolbar>
       </AppBar>
     </div>

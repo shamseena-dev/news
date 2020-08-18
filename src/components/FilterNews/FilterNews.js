@@ -109,7 +109,7 @@ function FilterNews() {
 catch(error) {
             console.error(error);
         }
-},[searchData,language];
+},[searchData,language]);
 
 
 
