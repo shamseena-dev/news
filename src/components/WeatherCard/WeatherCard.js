@@ -55,13 +55,14 @@ function WeatherCard({data}) {
           <Typography gutterBottom variant="h4" component="h4" color="textSecondary">
            {Math.round(temp -273.15)} &#8451;
            </Typography>
-           <Typography gutterBottom variant="h6" component="h6" color="textSecondary">
-           {Math.round(temp_min -273.15)} &#8451;/ {Math.round(temp_max -273.15)} &#8451;
-           </Typography>
-          <Typography variant="h5" color="primary" component="h5">
+            <Typography variant="h5" color="primary" component="h5">
            <span className="description"> {description} </span>
           </Typography>
 
+           <Typography gutterBottom variant="h6" component="h6" color="textSecondary">
+           {Math.round(temp_min -273.15)} &#8451;/ {Math.round(temp_max -273.15)} &#8451;
+           </Typography>
+         
 
         </CardContent> 
       </CardActionArea>

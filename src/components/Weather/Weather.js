@@ -14,7 +14,7 @@ function Weather() {
 
        try{
 
-  	axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
+  	axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=d34b836d5269e9bfb170f7f5b7ce9fe8`)
     .then(res =>{
               
 
@@ -44,7 +44,7 @@ catch(error) {
   return (
     <div className="container">
      
-        <h4> Weather</h4>
+       
         {data.length != 0 ?
         <WeatherCard  data={data} />
            

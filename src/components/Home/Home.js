@@ -5,7 +5,7 @@ import NewsDisplay from "../NewsDisplay/NewsDisplay";
 import banner from "../../assets/urban.jpg";
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-
+import Weather from "../Weather/Weather";
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -125,12 +125,15 @@ catch(error) {
   <>
   
         <div className="banner-div">
+          
            <h1> Get Regular News Feeds for free </h1>
            <Button variant="contained" size="large" className={classes.margin}>
           Subscribe
         </Button>
+
            
         </div>
+          <Weather />
         <NewsDisplay data={data} />
         
     </>

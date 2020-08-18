@@ -4,19 +4,26 @@
 
 .weather-card{
 	.MuiPaper-root  {
-	box-shadow: 4px 4px 10px rgba(0,0,0,0.2) !important;
+	box-shadow: 4px 4px 10px rgba(0,0,0,0.5) !important;
 	margin:15px 20px;
 	min-height: 250px;
+	
+	
+	z-index:2;
    
 
 
+}
+.MuiCardMedia-media {
+    width: 30%;
+    margin: auto;
 }
  a{
 	text-decoration: none;
 }
  .MuiCardContent-root{
    background-color: #fff;
-	height:50%;
+	height:20%;
 }
 .description{
 	color: $primary-light !important;
