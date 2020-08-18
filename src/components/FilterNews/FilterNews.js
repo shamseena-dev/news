@@ -1,35 +1,13 @@
 import React,{useEffect , useState} from 'react';
-import "./home.scss";
+
 import axios from "axios";
-import NewsDisplay from "../NewsDisplay/NewsDisplay";
-import banner from "../../assets/urban.jpg";
-import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
-import Weather from "../Weather/Weather";
+import NewsDisplay from '../NewsDisplay/NewsDisplay';
 
-import TextField from '@material-ui/core/TextField';
-import FilterNews from "../FilterNews/FilterNews";
-
-const useStyles = makeStyles((theme) => ({
-  margin: {
-    margin: theme.spacing(1),
-  },
-  extendedIcon: {
-    marginRight: theme.spacing(1),
-  },
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-      width: '25ch',
-    },
-  }
-}));
-
-function Home() {
+function FilterNews({searchData}) {
 	
   const [data , setData] = useState([
         {
-"title": "Twitter buzzes after Kasich says former GOP congressman will endorse Biden",
+"title": "Updated",
 "description": "abcd",
 "url": "https://news.google.com/__i/rss/rd/articles/CBMiTGh0dHBzOi8vd3d3LmZveG5ld3MuY29tL3BvbGl0aWNzL2thc2ljaC1mb3JtZXItZ29wLWNvbmdyZXNzbWFuLWVuZG9yc2UtYmlkZW7SAVBodHRwczovL3d3dy5mb3huZXdzLmNvbS9wb2xpdGljcy9rYXNpY2gtZm9ybWVyLWdvcC1jb25ncmVzc21hbi1lbmRvcnNlLWJpZGVuLmFtcA?oc=5",
 "image": null,
@@ -95,17 +73,15 @@ function Home() {
 }
 }
     ]);
-
-  const [searchField,setSearchField] = useState();
-  const [filteredNews,setFilteredNews] = useState(false);
-  const [language,setLanguage] = useState("en");
+    const [language,setLanguage] = useState("en");
+     const [searchField,setSearchField] = useState();
   useEffect(()=>{
   	const API_KEY = process.env.REACT_APP_GNEWS_API_KEY;
 
 
        try{
 
-  	axios.get(`https://gnews.io/api/v3/top-news?lang=${language}&token=1`)
+  	axios.get(`https://gnews.io/api/v3/search?q=${searchData}&lang=${language}&token=API-Token`)
     .then(res =>{
               
 
@@ -132,53 +108,18 @@ catch(error) {
         }
 },[]);
 
- const classes = useStyles();
 
- const handleChange=(e)=>{
- 	e.preventDefault();
- 	setSearchField(e.target.value);
- }
 
-const handleSubmit=(e)=>{
-	e.preventDefault();
-	setFilteredNews(true);
-}
   return (
   <>
   
-        <div className="banner-div">
-          
-           <h1> Get Regular News Feeds for free </h1>
-           <Button variant="contained" size="large" className={classes.margin}>
-          Subscribe
-        </Button>
-
-           
-        </div>
+        <NewsDisplay data={data} />
         
-		<div className="main-section">
-		        <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
-		     
-		            <TextField id="outlined-basic" 
-		                    label="Search here.." 
-		                    variant="outlined" 
-		                    onChange={handleChange}/>
-		        </form>
-		                 
-		          <Weather />
-
-		          {filteredNews ?
-		          	<FilterNews searchData={searchField} />
-		          	:
-
-		        <NewsDisplay data={data} />
-		    }
-		</div>
     </>
   );
 }
 
-export default Home;
+export default FilterNews;
 
 
 
