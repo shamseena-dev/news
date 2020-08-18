@@ -1,20 +1,20 @@
-import React,{useEffect,useState} from 'react';
+import React,{useEffect,useState,useContext} from 'react';
 import "./weather.scss";
 import axios from "axios";
 import WeatherCard from "../WeatherCard/WeatherCard";
-
+import {GeolocationContext} from '../../contexts/GeolocationContext';
 
 function Weather() {
 	const [data,setData] = useState([]);
-	const lat =52.507345;
-	const lon= 13.413557;
+  const [geolocation] = useContext(GeolocationContext);
+
 	useEffect(()=>{
   	const API_KEY = process.env.REACT_APP_OWM_API_KEY;
 
 
        try{
 
-  	axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=d34b836d5269e9bfb170f7f5b7ce9fe8`)
+  	axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${geolocation.lat}&lon=${geolocation.lon}&appid=${API_KEY}`)
     .then(res =>{
               
 
@@ -24,13 +24,7 @@ function Weather() {
                     setData(res.data)
 
                 }   
-           else{
-              console.log("Error");
-             
-                
-            } 
-
-
+         
 
 
   })

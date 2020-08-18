@@ -9,10 +9,16 @@ import Sports from "./components/Sports/Sports";
 import Entertainment from "./components/Entertainment/Entertainment";
 import Default404 from "./components/Default404/Default404";
 import Geolocation from "./components/Geolocation/Geolocation";
+import { SearchProvider } from "./contexts/SearchContext/SearchContext";
+import { LanguageProvider } from "./contexts/LanguageContext";
+import { GeolocationProvider } from "./contexts/GeolocationContext";
 function App() {
   return (
 
     <BrowserRouter>
+    <GeolocationProvider>
+    <LanguageProvider>
+    <SearchProvider>
     <div className="App">
     <Navbar />
     <Geolocation />
@@ -28,6 +34,9 @@ function App() {
          
     
     </div>
+        </SearchProvider>
+        </LanguageProvider>
+        </GeolocationProvider>
     </BrowserRouter>
   );
 }

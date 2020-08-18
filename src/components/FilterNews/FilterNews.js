@@ -1,9 +1,11 @@
-import React,{useEffect , useState} from 'react';
-
+import React,{useEffect , useState, useContext} from 'react';
 import axios from "axios";
 import NewsDisplay from '../NewsDisplay/NewsDisplay';
+import {SearchContext} from '../../contexts/SearchContext/SearchContext';
+import {LanguageContext} from '../../contexts/LanguageContext';
 
-function FilterNews({searchData}) {
+
+function FilterNews() {
 	
   const [data , setData] = useState([
         {
@@ -73,15 +75,15 @@ function FilterNews({searchData}) {
 }
 }
     ]);
-    const [language,setLanguage] = useState("en");
-     const [searchField,setSearchField] = useState();
+    const [language,setLanguage] = useContext(LanguageContext);
+    const [searchData,setSearchData] = useContext(SearchContext);
   useEffect(()=>{
   	const API_KEY = process.env.REACT_APP_GNEWS_API_KEY;
 
 
        try{
 
-  	axios.get(`https://gnews.io/api/v3/search?q=${searchData}&lang=${language}&token=API-Token`)
+  	axios.get(`https://gnews.io/api/v3/search?q=${searchData}&max=9&lang=${language}&token=${API_KEY}`)
     .then(res =>{
               
 
@@ -89,6 +91,7 @@ function FilterNews({searchData}) {
            if(res.data){
                     console.log("res",res);
                     setData(res.data.articles)
+
 
                 }   
            else{

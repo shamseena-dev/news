@@ -1,4 +1,4 @@
-import React,{useEffect , useState} from 'react';
+import React,{useEffect , useState,useContext} from 'react';
 import "./home.scss";
 import axios from "axios";
 import NewsDisplay from "../NewsDisplay/NewsDisplay";
@@ -9,6 +9,7 @@ import Weather from "../Weather/Weather";
 
 import TextField from '@material-ui/core/TextField';
 import FilterNews from "../FilterNews/FilterNews";
+ import {SearchContext} from '../../contexts/SearchContext/SearchContext';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -95,8 +96,11 @@ function Home() {
 }
 }
     ]);
+ 
+ 
 
-  const [searchField,setSearchField] = useState();
+
+  const [searchData,setSearchData] = useContext(SearchContext);
   const [filteredNews,setFilteredNews] = useState(false);
   const [language,setLanguage] = useState("en");
   useEffect(()=>{
@@ -105,7 +109,7 @@ function Home() {
 
        try{
 
-  	axios.get(`https://gnews.io/api/v3/top-news?lang=${language}&token=1`)
+  	axios.get(`https://gnews.io/api/v3/top-news?lang=${language}&max=9&token=${API_KEY}`)
     .then(res =>{
               
 
@@ -136,7 +140,7 @@ catch(error) {
 
  const handleChange=(e)=>{
  	e.preventDefault();
- 	setSearchField(e.target.value);
+ 	setSearchData(e.target.value);
  }
 
 const handleSubmit=(e)=>{
@@ -168,7 +172,7 @@ const handleSubmit=(e)=>{
 		          <Weather />
 
 		          {filteredNews ?
-		          	<FilterNews searchData={searchField} />
+		          	<FilterNews />
 		          	:
 
 		        <NewsDisplay data={data} />
