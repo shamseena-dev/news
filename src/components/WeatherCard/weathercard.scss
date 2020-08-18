@@ -1,18 +1,26 @@
-.news-card {
-   .MuiPaper-root  {
+@import "../../index.scss";
+
+
+
+.weather-card{
+	.MuiPaper-root  {
 	box-shadow: 4px 4px 10px rgba(0,0,0,0.2) !important;
 	margin:15px 20px;
 	min-height: 250px;
-    background-color: #f0f0f0;
+   
+
 
 }
-
  a{
 	text-decoration: none;
 }
  .MuiCardContent-root{
    background-color: #fff;
 	height:50%;
+}
+.description{
+	color: $primary-light !important;
+	text-transform: capitalize;
 }
 
 }
