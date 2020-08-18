@@ -1,10 +1,13 @@
 @import "../../index.scss";
-.nav {
+.nav-bar{
 	.PrivateTabIndicator-colorSecondary-3{
 	display:none !important;
 }
 a{
   text-decoration: none;
+}
+.MuiAppBar-root {
+  height:80px;
 }
 
 .PrivateTabIndicator-colorSecondary-6 {
@@ -22,4 +25,13 @@ a{
   	color: brown;
   	opacity: 1;
   }
+  .MuiMenu-paper {
+    
+    max-height: 200px !important;
+    overflow-y: scroll;
+}
+}
+
+.MuiMenu-paper {
+    max-height: 200px !important;
 }

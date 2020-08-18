@@ -115,7 +115,7 @@ catch(error) {
 
   return (
   <>
-  
+      
         <NewsDisplay data={data} />
         
     </>

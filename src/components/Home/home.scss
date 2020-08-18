@@ -8,21 +8,71 @@
 	z-index:-1;
 	padding-top:40px;
 	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	align-items: center;
+	.caption{
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
 	h1{
-		color:#f0f0f0;
+		color:#fff;
 		z-index:100;
+		font-size:2.2em;
 	}
 	
-    .MuiButtonBase-root{
-    	background-color: #ff9800 !important;
+    .caption .MuiButtonBase-root{
+    	background-color: #ff9800 !important ;
     	color:white;
     	font-weight: 800;
-    	box-shadow: shadow-heavy;
+    	
     }
 }
 
 
+
+	.search-holder{
+
+          input{
+          	background-color: #f0f0f0;
+          	width:80vw !important;
+          }
+
+     }    
+
+.title{
+	color: rgba(0,0,0,0.54);
+}
+
+
+	.weather-holder{
+		align-self: flex-end;
+	}
+	
+
+
+ 
+@media only screen and (max-width: 64em) {
+  .banner-div{
+   flex-direction: column;
+   height:auto;
+   .caption{
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: center;
+	}
+
+ } 
+}
+
+@media (min-width: 100px){
+.makeStyles-title-3 {
+    display: block;
+ }
+}
