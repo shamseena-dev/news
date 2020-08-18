@@ -1,15 +1,18 @@
-import React,{useEffect , useState,useContext} from 'react';
+import React,{useEffect , useState,useContext,Suspense } from 'react';
 import "./home.scss";
 import axios from "axios";
 import NewsDisplay from "../NewsDisplay/NewsDisplay";
 import banner from "../../assets/urban.jpg";
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import Weather from "../Weather/Weather";
-
 import TextField from '@material-ui/core/TextField';
 import FilterNews from "../FilterNews/FilterNews";
  import {SearchContext} from '../../contexts/SearchContext/SearchContext';
+import Geolocation from "../Geolocation/Geolocation";
+
+const Weather = React.lazy(() => import("../Weather/Weather"));
+
+
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -109,7 +112,7 @@ function Home() {
 
        try{
 
-  	axios.get(`https://gnews.io/api/v3/top-news?lang=${language}&max=9&token=${API_KEY}`)
+  	axios.get(`https://gnews.io/api/v3/top-news?lang=${language}&max=9&token=1`)
     .then(res =>{
               
 
@@ -152,7 +155,7 @@ const handleSubmit=(e)=>{
   
         <div className="banner-div">
           
-           <h1> Get Regular News Feeds for free </h1>
+           <h1> Get Unlimited access to News Updates </h1>
            <Button variant="contained" size="large" className={classes.margin}>
           Subscribe
         </Button>
@@ -168,8 +171,12 @@ const handleSubmit=(e)=>{
 		                    variant="outlined" 
 		                    onChange={handleChange}/>
 		        </form>
-		                 
-		          <Weather />
+		           
+                    <Geolocation />
+		           <Suspense fallback={<div>Loading...</div>}>
+      <Weather />
+      </Suspense>      
+		          
 
 		          {filteredNews ?
 		          	<FilterNews />
