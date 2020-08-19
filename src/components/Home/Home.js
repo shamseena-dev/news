@@ -35,7 +35,7 @@ function Home() {
   const [data , setData] = useState([]);
 
 
-  const [setSearchData] = useContext(SearchContext);
+  const [searchData, setSearchData] = useContext(SearchContext);
   const [filteredNews,setFilteredNews] = useState(false);
   const [language] = useContext(LanguageContext);
 
@@ -81,7 +81,9 @@ catch(error) {
 
 const handleSubmit=(e)=>{
 	e.preventDefault();
+	if(searchData){
 	setFilteredNews(true);
+	}
 }
   return (
   <>
