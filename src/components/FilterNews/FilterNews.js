@@ -22,7 +22,7 @@ function FilterNews() {
 
 
            if(res.data){
-                    console.log("res",res);
+                   
                     setData(res.data.articles)
 
 
