@@ -26,11 +26,11 @@ Main banner caption color: #fff
 
 White spacing provided 
 
-Main sBanner added, with a call to action button
+Main Banner added, with a call to action button
 
 Weather Card added in the banner on right side
 
-News cards with a clickable link added to the original news
+News cards with a clickable link to the original news added
 
 News Cards added  in a 3/3 layout on full screen
 
