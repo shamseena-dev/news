@@ -33,11 +33,12 @@ const useStyles = makeStyles((theme) => ({
 function Home() {
 	
   const [data , setData] = useState([]);
+  const [language,setLanguage] = useContext(LanguageContext);
 
 
   const [searchData, setSearchData] = useContext(SearchContext);
   const [filteredNews,setFilteredNews] = useState(false);
-  const [language] = useContext(LanguageContext);
+  
 
   useEffect(()=>{
   	const API_KEY = process.env.REACT_APP_GNEWS_API_KEY;
@@ -85,6 +86,11 @@ const handleSubmit=(e)=>{
 	setFilteredNews(true);
 	}
 }
+
+const handleChange2 = (event) => {
+    setLanguage(event.target.value);
+  };
+
   return (
   <>
   
@@ -122,7 +128,16 @@ const handleSubmit=(e)=>{
 		        </form>
 		          </div>
                
-
+               <select name="lang" id="lang" value={language}
+          onChange={handleChange2}>
+    <option value="en">English</option>
+    <option value="de">German</option>
+    <option value="cs">Czech</option>
+    <option value="fr">French</option>
+     <option value="da">Danish</option>
+    <option value="nl">Dutch</option>
+   
+  </select> 
 		          {filteredNews ?
 		          	<FilterNews />
 		          	:
