@@ -1,4 +1,28 @@
-# Design Decision Documentation:
+## Project
+News & Weather App (SPA) integrated with GNews API and openweather API (REST APIs).
+Live :https://localnews.netlify.app/
+
+
+## Details 
+Based on users geolocation (once user allow access ), weather for the selected region (data from openweather API)  is displayed.
+Provision to select language from a list of language, and the Top news is displayed in the selected langauge (data from Gnews API).
+Provision to display Top news (set to default view).
+Provision to search for any keyword -to display all news on that topic.
+Weather Card added in the banner on right side
+News cards with a clickable link to the original news added
+Fully responsive
+
+## Tech stack:
+-React
+-React Router
+-React Hooks
+-Context API
+-REST API integration
+-Material UI (CSS framework)
+-SCSS
+
+
+## Design Decision Documentation:
 
 Font Family : Roboto 
 
@@ -21,20 +45,6 @@ base-color: #ec7907;
 section title color: rgba(0, 0, 0, 0.54);
 
 Main banner caption color: #fff
-
-## Other design details:
-
-White spacing provided 
-
-Main Banner added, with a call to action button
-
-Weather Card added in the banner on right side
-
-News cards with a clickable link to the original news added
-
-News Cards added  in a 3/3 layout on full screen
-
-Made fully responsive
 
 
 -------------------------------------------------------------------------------
