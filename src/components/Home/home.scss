@@ -19,10 +19,15 @@
 		justify-content: flex-start;
 		align-items: flex-start;
 	}
+	a{
+	  text-decoration:none;
+	  
+	}
 	h1{
 		color:#fff;
 		z-index:100;
 		font-size:2.2em;
+		margin-left:10px;
 	}
 	
     .caption .MuiButtonBase-root{

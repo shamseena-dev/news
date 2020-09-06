@@ -13,8 +13,6 @@ import "./navbar.scss";
 
 
 import {LanguageContext} from '../../contexts/LanguageContext';
-
-
      
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -83,7 +81,8 @@ function Navbar(){
 const [language,setLanguage] = useContext(LanguageContext);
   const classes = useStyles();
 
- 
+
+
   const handleChange = (event) => {
     setLanguage(event.target.value);
   };
@@ -107,8 +106,9 @@ const [language,setLanguage] = useContext(LanguageContext);
            D'Local News
           </Typography>
          
+          
 
-         <select name="cars" id="cars" value={language}
+         <select name="lang" id="lang" value={language}
           onChange={handleChange}>
     <option value="en">English</option>
     <option value="de">German</option>

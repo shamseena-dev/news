@@ -90,11 +90,13 @@ const handleSubmit=(e)=>{
   
         <div className="banner-div">
           <div className="caption">
-           <h1> Get Unlimited Access </h1>
+           <h1> The Most Trusted News Source</h1>
          
-           <Button variant="contained" size="large" className={classes.margin}>
-          Subscribe
-           </Button>
+           <a href="#topnews" className="button-get-started"><Button variant="contained" size="large" className={classes.margin}>
+                   Get Started
+           </Button> </a>
+
+         
           </div>
 
            <div className="weather-holder">
@@ -109,8 +111,8 @@ const handleSubmit=(e)=>{
         
 		<div className="main-section">
 		     
-		       <h1 className="title"> Top News </h1>
-		        <div className="search-holder">
+		       <h1 className="title"> Top News For You</h1>
+		        <div className="search-holder" id="topnews">
 		        <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
 		     
 		            <TextField id="outlined-basic" 
